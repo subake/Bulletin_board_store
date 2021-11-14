@@ -2,7 +2,7 @@ import json
 import redis
 from server import config
 
-# get redis connection
+# get redis connection and add 'size' to generate item keys
 redis_connection = redis.from_url(config.Config.REDIS_URL)
 if 'size' not in redis_connection.scan_iter("*"):
     redis_connection.set('size', '0')
@@ -29,6 +29,7 @@ def item_list():
     return itemlist
 
 
+# get specific item to contact seller
 def get_item(item_id):
     item = json.loads(redis_connection.get(item_id))
     item["mail_link"] = 'mailto:' + item["mail"]

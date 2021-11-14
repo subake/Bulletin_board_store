@@ -1,5 +1,6 @@
 from server.main.views import main_blueprint
 from flask import Flask, jsonify
+
 import traceback  # error traceback
 from werkzeug.exceptions import default_exceptions  # exception handling
 from werkzeug.exceptions import HTTPException  # exception handling
@@ -15,7 +16,7 @@ def create_app():
     # register blueprints
     app.register_blueprint(main_blueprint)
 
-    # better exception handling
+    # exception handling
     @app.errorhandler(Exception)
     def handle_error(e):
         # 400 for https error, 500 for internal error
