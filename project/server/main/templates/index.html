@@ -20,7 +20,7 @@
                     {% if sell_flag == 1 %}
                     <h6 class="card-subtitle mb-2 text-muted">Add some information about what you selling</h6>
                     <div>
-                        <form action="{{ url_for('main.add_wait_job') }}" method="post">
+                        <form action="{{ url_for('main.put_on_sale') }}" method="post">
                             <div class="form-group">
                                 <label for="item-type">Item Type</label>
                                 <select class="form-control" id="item-type" name="item-type">
