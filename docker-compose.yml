@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    build: ./project
+    image: master-image
+    ports:
+      - 5000:5000
+    command: gunicorn --workers 4 --bind 0.0.0.0:5000 --timeout 120 'server:create_app()'
+    stdin_open: true
+    tty: true
+
+  redis:
+    image: redis
