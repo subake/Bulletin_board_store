@@ -38,6 +38,6 @@ def put_on_sale():
 # endpoint for contacting item seller
 @main_blueprint.route('/purchase/<item_id>', methods=["GET"])
 def purchase_item(item_id):
-    lst = get_item(item_id)
+    item = get_item(item_id)
 
-    return render_template('index.html', sell_flag=0, purchase_flag=1, items=lst)
+    return render_template('item_page.html', item=item)
