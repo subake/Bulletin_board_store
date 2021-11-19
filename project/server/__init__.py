@@ -7,6 +7,11 @@ from werkzeug.exceptions import HTTPException  # exception handling
 
 
 def create_app():
+    """
+    Creation and initialization of Flask app with exception handling
+    :return: app
+    """
+
     # instantiate the app
     app = Flask(__name__, instance_relative_config=False)
 
@@ -19,6 +24,12 @@ def create_app():
     # exception handling
     @app.errorhandler(Exception)
     def handle_error(e):
+        """
+        Function for better exception handling
+        :param e: exception
+        :return: error message
+        """
+
         # 400 for https error, 500 for internal error
         if isinstance(e, HTTPException):
             # status_code = e.code
