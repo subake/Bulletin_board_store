@@ -35,20 +35,25 @@
                             </div>
                             <div class="form-group">
                                 <label for="item-name">Item Name</label>
-                                <textarea class="form-control" id="item-name" name="item-name" rows="1" placeholder="Enter item name"></textarea>
+                                <textarea class="form-control" id="item-name" name="item-name" rows="1"
+                                          placeholder="Enter item name"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="item-price">Price</label>
-                                <textarea class="form-control" id="item-price" name="item-price" rows="1" placeholder="Enter item price"></textarea>
+                                <textarea class="form-control" id="item-price" name="item-price" rows="1"
+                                          placeholder="Enter item price"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="item-description">Description</label>
-                                <textarea class="form-control" id="item-description" name="item-description" rows="3" placeholder="Provide short description of your item"></textarea>
+                                <textarea class="form-control" id="item-description" name="item-description" rows="3"
+                                          placeholder="Provide short description of your item"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="seller-email">Email address</label>
-                                <input type="email" class="form-control" id="seller-email" name="seller-email" aria-describedby="emailHelp" placeholder="Enter email">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <input type="email" class="form-control" id="seller-email" name="seller-email"
+                                       aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    anyone else.</small>
                             </div>
                             <button type="submit" class="btn btn-primary">Put on sale</button>
                         </form>
@@ -66,23 +71,25 @@
         <div class="col-md-12">
             <h3>Products</h3>
             <table class="table">
-                <thead><tr>
+                <thead>
+                <tr>
                     <th>Status</th>
                     <th>Category</th>
                     <th>Name</th>
                     <th>Price</th>
                     <th style="width: 30%;">Description</th>
-                </tr></thead>
+                </tr>
+                </thead>
                 <tbody>
-                    {% for item in items %}
-                    <tr>
-                       <td><a href="/purchase/{{ item.id }}" class="btn btn-sm btn-primary">Buy</a></td>
-                       <td>{{ item.category }}</td>
-                       <td>{{ item.name }}</td>
-                       <td>{{ item.price }}</td>
-                       <td>{{ item.description }}</td>
-                    </tr>
-                    {% endfor %}
+                {% for item in items %}
+                <tr>
+                    <td><a href="/purchase/{{ item.id }}" class="btn btn-sm btn-primary">Buy</a></td>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.description }}</td>
+                </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </div>
