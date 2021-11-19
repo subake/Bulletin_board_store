@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MiniAvito</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1>MiniAvito online retail</h1>
+    <p>Welcome to our mini store! Feel free to buy or sell anything you want!</p>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="width: 60rem;">
+                <div class="card-body">
+                    <h2 class="card-title">{{ item.name }}     {{ item.price }}</h2>
+                    <h3 class="card-subtitle mb-2 text-muted" style="font-size: 1.5vw"> {{ item.category }}</h3>
+                    <p class="card-text"> {{ item.description }}</p>
+                    <h4 style="font-size: 1vw">You can contact seller of "{{ item.name }}" via email: <a href={{ item.mail_link }}>{{ item.mail }}</a></h4>
+                    <form action="" method="get">
+                        <td><a href="/" class="btn btn-primary">Back to item list</a></td>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
