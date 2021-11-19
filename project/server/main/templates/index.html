@@ -85,14 +85,6 @@
                     {% endfor %}
                 </tbody>
             </table>
-            {% if purchase_flag == 1 %}
-            {% for item in items %}
-            <h4>You can contact seller of "{{ item.name }}" via email: <a href={{ item.mail_link }}>{{ item.mail }}</a></h4>
-            <form action="" method="get">
-                <td><a href="/" class="btn btn-primary">Back to item list</a></td>
-            </form>
-            {% endfor %}
-            {% endif %}
         </div>
     </div>
 </div>
